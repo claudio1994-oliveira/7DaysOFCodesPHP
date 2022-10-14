@@ -24,6 +24,7 @@ class Controller
     }
     public function do_not_found()
     {
+        http_response_code(404);
         return $this->view->render_view("not_found");
     }
 }
