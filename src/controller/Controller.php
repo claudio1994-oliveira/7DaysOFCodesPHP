@@ -16,6 +16,10 @@ class Controller
 
     public function do_register()
     {
+        if ($_POST) {
+            crud_create($_POST);
+            header('Location: http://localhost:4242/?page=login');
+        }
         return $this->view->render_view("register");
     }
     public function do_login()
