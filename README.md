@@ -58,4 +58,23 @@ Quando chegar uma requisição GET à URL
 
 Esta responsabilidade pertence ao arquivo controller.php!
 
+### Desafio #03
+
+Sua próxima tarefa será validar os dados do usuário e, caso haja algum erro no formulário, a requisição deverá retroceder para a tela anterior. Uma mensagem de erro deverá ser exibida na tela APENAS quando um erro acontecer.
+
+Os dados precisam ser avaliados da seguinte forma:
+
+    - não deve haver mais de um registro por email;
+    - a senha deve ter mais de 10 caracteres e ser igual ao campo de validação.
+
+Um caminho que pode ser tomado é usar a função str_replace na função render_view antes de exibir a página correspondente. Será preciso atualizar os arquivos de template para que seja possível fazer o str_replace no local adequado.
+
+Caso o usuário tenha êxito no cadastro, haverá redirecionamento para a tela de login, onde uma mensagem de sucesso irá informar que ele ainda precisa confirmar o email.
+
+Um caminho válido seria criar uma função no arquivo crud.php, que recebe um email como parâmetro e, caso encontre um valor, retorne um array ou objeto correspondente; e caso não encontre, retorne false.
+
+A validação irá exigir um novo arquivo focado nisso, então você pode criar o validation.php. Cada requisição que demande validação de formulário deverá ter uma função correspondente neste novo arquivo!
+
+As funções de validação irão receber os valores que vieram do formulário e irão informar o estado dos campos com seus respectivos erros, caso tenha ocorrido algum.
+
 #### Créditos - 7DaysOfCode Alura
