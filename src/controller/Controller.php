@@ -18,12 +18,14 @@ class Controller
     {
         if ($_POST) {
             crud_create($_POST);
-            header('Location: http://localhost:4242/?page=login');
+
+            header('Location: http://localhost:4242/?page=login&from=register');
         }
         return $this->view->render_view("register");
     }
     public function do_login()
     {
+
         return $this->view->render_view("login");
     }
     public function do_not_found()
